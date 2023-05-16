@@ -1,11 +1,3 @@
-
-@SuppressWarnings("serial")
-public class NotFoundException extends ArrayIndexOutOfBoundsException {
-	public NotFoundException(String message) {
-        super(message);
-    }
-}
-
 import java.util.Scanner;
 import java.util.Random;
 
@@ -25,11 +17,7 @@ public class Practice_59 {
 
         try {
             int t = searchArray(arr, k);//예외를 던짐
-
-            if (t == -1)//예외 발생
-                throw new NotFoundException("입력한 숫자 " + k + "는 배열에 없습니다.");
-            else
-                System.out.println("입력한 숫자 " + k + "는 배열의 " + (t + 1) + "번째에 있습니다.");
+            System.out.println("입력한 숫자 " + k + "는 배열의 " + (t + 1) + "번째에 있습니다.");
         } 
         catch (NotFoundException ex) {//예외 처리
             System.out.println(ex.getMessage());
@@ -39,7 +27,8 @@ public class Practice_59 {
     }
 
     public static int searchArray(int[] array, int key) throws NotFoundException {
-    	int p = -1;
+        //출력문 사용 금지
+    	int p = 0;
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key) {
@@ -63,3 +52,4 @@ public class Practice_59 {
             System.out.print(array[i] + "\t");
         }
     }
+}
