@@ -31,6 +31,3 @@ public class ExceptionHandling {
     sc.close();
   } 
 }
-
-// 다른 클래스에 메소드 따로 정리
-public static int quotient(int a, int b) throw Arithmetic
